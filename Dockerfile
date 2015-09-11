@@ -21,8 +21,9 @@ RUN mkdir -p /etc/service/nginx
 ADD start.sh /etc/service/nginx/run
 RUN chmod +x /etc/service/nginx/run
 
-# Expose port 80 on all containers instantiated from this image.
+# Expose ports 80 and 443 on all containers instantiated from this image.
 EXPOSE 80
+EXPOSE 443
 
 # Clean image.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
