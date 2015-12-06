@@ -18,7 +18,7 @@ RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
 # Add startup file, this file is invoke by phusion/baseimage base image.
 RUN mkdir -p /etc/service/nginx
-ADD start.sh /etc/service/nginx/run
+COPY start.sh /etc/service/nginx/run
 RUN chmod +x /etc/service/nginx/run
 
 # Expose ports 80 and 443 on all containers instantiated from this image.
